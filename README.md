@@ -30,7 +30,7 @@ set-default-sink echoCancel_sink
 
 3. Save this to `.bashrc` or `.zshrc`:
 ```bash
-pulseaudio --start
+export PULSE_SERVER=127.0.0.1 && pulseaudio --start --exit-idle-time=-1
 ```
 
 4. Back to Termux:
