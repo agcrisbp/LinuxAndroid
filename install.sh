@@ -50,16 +50,16 @@ cat > $CHROOT/root/.bashrc <<- EOF
 apt-get update
 apt-get install sudo wget -y
 sleep 2
-useradd -m -s /bin/bash ubuntu
-echo "ubuntu:ubuntu" | chpasswd
-echo "ubuntu  ALL=(ALL:ALL) ALL" >> /etc/sudoers.d/ubuntu
+useradd -m -s /bin/bash charis
+echo "charis:ch" | chpasswd
+echo "charis  ALL=(ALL:ALL) ALL" >> /etc/sudoers.d/charis
 sleep 2
 exit
 echo
 EOF
 proot-distro login ubuntu
-echo "proot-distro login --user ubuntu ubuntu" >> $PREFIX/bin/ubuntu
-chmod +x $PREFIX/bin/ubuntu
+echo "proot-distro login --user charis ubuntu" >> $PREFIX/bin/ubuntu
+chmod +x $PREFIX/bin/charis
 rm $CHROOT/root/.bashrc
 }
 
@@ -122,13 +122,13 @@ end(){
 echo
 echo ${G}"Installion completed"
 echo
-echo "ubuntu  -  To start Ubuntu"
+echo "charis  -  To start Ubuntu"
 echo
-echo "ubuntu  -  default ubuntu password"
+echo "charis  -  default ubuntu password"
 echo
-echo "vncstart  -  To start vncserver, Execute inside ubuntu"
+echo "vncstart  -  To start vncserver, Execute inside charis"
 echo
-echo "vncstop  -  To stop vncserver, Execute inside ubuntu"${W}
+echo "vncstop  -  To stop vncserver, Execute inside charis"${W}
 rm -rf ~/install.sh
 }
 
