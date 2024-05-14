@@ -55,9 +55,9 @@ pulseaudio --start --exit-idle-time=-1
 - Or just manually:
 
 ```
-pulseaudio --start --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" --exit-idle-time=-1
-load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1
-load-module module-sles-source
+pulseaudio --start --exit-idle-time=-1
+pactl load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1
+pactl load-module module-sles-source
 ```
 
 5. Restart your Termux!
