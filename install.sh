@@ -58,20 +58,20 @@ exit
 echo
 EOF
 proot-distro login ubuntu
-echo "proot-distro login --user charis ubuntu" >> $PREFIX/bin/ubuntu
+echo "proot-distro login --user charis ubuntu" >> $PREFIX/bin/charis
 chmod +x $PREFIX/bin/charis
 rm $CHROOT/root/.bashrc
 }
 
 install_theme(){
 echo ${G}"Installing Theme"${W}
-mv $CHROOT/home/ubuntu/.bashrc $CHROOT/home/ubuntu/.bashrc.bak
-echo "wget https://raw.githubusercontent.com/agcrisbp/LinuxAndroid/main/theme/theme.sh ; bash  theme.sh; exit" >> $CHROOT/home/ubuntu/.bashrc
-ubuntu
-rm $CHROOT/home/ubuntu/theme.sh*
-rm $CHROOT/home/ubuntu/.bashrc
-mv $CHROOT/home/ubuntu/.bashrc.bak $CHROOT/home/ubuntu/.bashrc
-cp $CHROOT/home/ubuntu/.bashrc $CHROOT/root/.bashrc
+mv $CHROOT/home/charis/.bashrc $CHROOT/home/charis/.bashrc.bak
+echo "wget https://raw.githubusercontent.com/agcrisbp/LinuxAndroid/main/theme/theme.sh ; bash  theme.sh; exit" >> $CHROOT/home/charis/.bashrc
+charis
+rm $CHROOT/home/charis/theme.sh*
+rm $CHROOT/home/charis/.bashrc
+mv $CHROOT/home/charis/.bashrc.bak $CHROOT/home/charis/.bashrc
+cp $CHROOT/home/charis/.bashrc $CHROOT/root/.bashrc
 sed -i 's/32/31/g' $CHROOT/root/.bashrc
 }
 
@@ -100,8 +100,8 @@ pulseaudio --start \
     --exit-idle-time=-1
 EOF
 
-mv $CHROOT/home/ubuntu/.bashrc $CHROOT/home/ubuntu/.bashrc.bak
-cat > $CHROOT/home/ubuntu/.bashrc <<- EOF
+mv $CHROOT/home/charis/.bashrc $CHROOT/home/charis/.bashrc.bak
+cat > $CHROOT/home/charis/.bashrc <<- EOF
 vncstart
 sleep 4
 DISPLAY=:1 firefox &
@@ -112,10 +112,10 @@ sleep 4
 exit
 echo
 EOF
-ubuntu
-rm $CHROOT/home/ubuntu/.bashrc
-mv $CHROOT/home/ubuntu/.bashrc.bak $CHROOT/home/ubuntu/.bashrc
-wget -O $(find $CHROOT/home/ubuntu/.mozilla/firefox -name *.default-esr)/user.js https://raw.githubusercontent.com/agcrisbp/LinuxAndroid/main/fixes/user.js
+charis
+rm $CHROOT/home/charis/.bashrc
+mv $CHROOT/home/charis/.bashrc.bak $CHROOT/home/charis/.bashrc
+wget -O $(find $CHROOT/home/charis/.mozilla/firefox -name *.default-esr)/user.js https://raw.githubusercontent.com/agcrisbp/LinuxAndroid/main/fixes/user.js
 }
 
 end(){
@@ -124,7 +124,7 @@ echo ${G}"Installion completed"
 echo
 echo "charis  -  To start Ubuntu"
 echo
-echo "charis  -  default ubuntu password"
+echo "ch  -  default charis password"
 echo
 echo "vncstart  -  To start vncserver, Execute inside charis"
 echo
