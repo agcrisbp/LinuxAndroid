@@ -26,7 +26,7 @@ install_desktop(){
 echo ${G}"Installing XFCE Desktop..."${W}
 cat > $CHROOT/root/.bashrc <<- EOF
 apt-get update
-apt install udisks2 -y
+apt install udisks2 git wget nano -y
 rm -rf /var/lib/dpkg/info/udisks2.postinst
 echo "" >> /var/lib/dpkg/info/udisks2.postinst
 dpkg --configure -a
