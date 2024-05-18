@@ -52,7 +52,7 @@ apt-get install sudo wget -y
 sleep 2
 useradd -m -s /bin/bash charis
 echo "charis:ch" | chpasswd
-echo "charis  ALL=(ALL:ALL) ALL" >> /etc/sudoers.d/charis
+echo "charis  ALL=(ALL:ALL) ALL NOPASSWD=ALL" >> /etc/sudoers.d/charis
 sleep 2
 exit
 echo
