@@ -6,6 +6,13 @@ chmod +x install.sh
 
 # FIX SOUND & ENABLE MICROPHONE
 
+- Requirements
+  - [Termux:APi](https://f-droid.org/en/packages/com.termux.api/)
+  - Enable Termux:APi microphone access.
+
+![Screenshot_2024-12-10-05-32-50-280_com google android permissioncontroller](https://github.com/user-attachments/assets/b20bb31e-8746-4821-aa8a-c33eb208563b)
+
+
 
 1. Open/create a file for the TCP and SLES modules:
 
